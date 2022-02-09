@@ -7,6 +7,7 @@ local servers = {
 	'jdtls',
 	'jsonls',
 	'sumneko_lua',
+	'texlab',
 }
 
 local nvim_lsp = require('lspconfig')

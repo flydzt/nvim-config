@@ -6,6 +6,7 @@ command! -bang -nargs=* Rg call fzf#vim#grep('rg --no-heading --line-number --co
 ]])
 
 
+
 require('basic')
 
 require('keybindings')
