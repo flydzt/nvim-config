@@ -46,7 +46,18 @@ return require('packer').startup(function()
 
 	-- better default
 	use {"folke/which-key.nvim"}
-	use 'folke/lsp-colors.nvim'
+	use {
+		'folke/lsp-colors.nvim',
+		config = function ()
+			-- Lua
+			require("lsp-colors").setup({
+				Error = "#db4b4b",
+				Warning = "#e0af68",
+				Information = "#0db9d7",
+				Hint = "#10B981"
+			})
+		end
+	}
 	use 'yamatsum/nvim-cursorline'
 	use {'kevinhwang91/nvim-bqf', ft = 'qf'}
 	use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim",}
@@ -75,9 +86,11 @@ return require('packer').startup(function()
 		end
 	}
 	-- theme
+	use 'folke/tokyonight.nvim'
 	use 'shaunsingh/nord.nvim'
 	use 'rakr/vim-one'
-	use 'morhetz/gruvbox'
+	-- use 'morhetz/gruvbox'
+	use 'ellisonleao/gruvbox.nvim'
 	use 'NLKNguyen/papercolor-theme'
 	-- auto sync
 	if PACKER_BOOTSTRAP then
