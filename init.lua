@@ -1,5 +1,6 @@
 require('plugins')
 
+vim.o.background = "dark"
 vim.cmd([[
 colorscheme gruvbox
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --no-heading --line-number --color=always --smart-case -g "!kitex_gen/" -- '.shellescape(<q-args>), 1,  fzf#vim#with_preview(), <bang>0)
