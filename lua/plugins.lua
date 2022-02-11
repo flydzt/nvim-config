@@ -37,13 +37,7 @@ return require('packer').startup(function()
 	use 'tpope/vim-fugitive'
 	-- preview
 	use 'iamcco/markdown-preview.nvim'
-	use {
-		'xuhdev/vim-latex-live-preview',
-		config = function ()
-			vim.g.livepreview_engine='xelatex'
-			vim.g.livepreview_previewer='mupdf'
-		end
-	}
+	use 'xuhdev/vim-latex-live-preview'
 
 	-- better default
 	use {"folke/which-key.nvim"}

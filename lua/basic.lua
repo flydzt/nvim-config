@@ -77,3 +77,5 @@ vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
 
+vim.g.livepreview_engine='xelatex'
+vim.g.livepreview_previewer='mupdf'
