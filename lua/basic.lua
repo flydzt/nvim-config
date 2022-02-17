@@ -78,4 +78,4 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 
 vim.g.livepreview_engine='xelatex'
-vim.g.livepreview_previewer='mupdf'
+vim.g.livepreview_previewer='zathura'
