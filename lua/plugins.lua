@@ -36,8 +36,8 @@ return require('packer').startup(function()
 	use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
 	use 'tpope/vim-fugitive'
 	-- preview
-	use 'iamcco/markdown-preview.nvim'
-	use 'xuhdev/vim-latex-live-preview'
+	-- use 'iamcco/markdown-preview.nvim'
+	-- use 'xuhdev/vim-latex-live-preview'
 
 	-- better default
 	use {"folke/which-key.nvim"}
