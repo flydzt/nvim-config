@@ -1,31 +1,39 @@
-local nvim_lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
 local lsp_installer = require "nvim-lsp-installer"
+
 -- map buffer local keybindings when the language server attaches
 local servers = {
-	'html',				-- html
 	'bashls',			-- bash
 	'clangd',			-- c/c++
 	'cmake',			-- cmake
 	'golangci_lint_ls', -- golanglint
 	'gopls',			-- golang
+	'html',				-- html
 	'jsonls',			-- json
+	'rust_analyzer',	-- rust
+	'sqls',				-- sql
 	'sumneko_lua',		-- lua
+	'yamlls',			-- yaml
 	-- 'jdtls',
 	-- 'texlab',
 }
 
+lsp_installer.on_server_ready(function(server)
+	local opts = {}
+	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+	server:setup(opts)
+end)
 
-for _, lsp in ipairs(servers) do
-	local server_is_found, server = lsp_installer.get_server(lsp)
+for _, lsp_name in ipairs(servers) do
+	local server_is_found, server = lsp_installer.get_server(lsp_name)
 	if server_is_found and not server:is_installed() then
-		print("LSP Installing " .. lsp)
+		print("LSP Installing " .. lsp_name)
 		server:install()
 	end
 
-
-	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	local settings = {}
-	if lsp == 'sumneko_lua' then
+	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	if lsp_name == 'sumneko_lua' then
 		settings = {
 			Lua = {
 				diagnostics = {
@@ -34,7 +42,7 @@ for _, lsp in ipairs(servers) do
 			}
 		}
 	end
-	nvim_lsp[lsp].setup {
+	lspconfig[lsp_name].setup {
 		capabilities = capabilities,
 		flags = {
 			debounce_text_changes = 150,
