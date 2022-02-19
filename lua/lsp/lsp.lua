@@ -18,6 +18,7 @@ local servers = {
 	-- 'texlab',
 }
 
+-- lsp_install
 lsp_installer.on_server_ready(function(server)
 	local opts = {}
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -30,7 +31,10 @@ for _, lsp_name in ipairs(servers) do
 		print("LSP Installing " .. lsp_name)
 		server:install()
 	end
+end
 
+-- lspconfig
+for _, lsp_name in ipairs(servers) do
 	local settings = {}
 	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	if lsp_name == 'sumneko_lua' then
@@ -50,6 +54,7 @@ for _, lsp_name in ipairs(servers) do
 		settings = settings,
 	}
 end
+
 
 -- lsp signature
 require "lsp_signature".setup()
