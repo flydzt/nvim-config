@@ -56,7 +56,6 @@ vim.o.swapfile = false
 -- smaller updatetime
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间300毫秒，可根据需要设置
--- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
 -- vim.o.timeoutlen = 300
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
@@ -67,7 +66,7 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.list = false
+vim.o.list = true
 --vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true

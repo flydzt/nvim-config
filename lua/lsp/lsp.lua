@@ -1,24 +1,24 @@
 local nvim_lsp = require('lspconfig')
-require "lsp_signature".setup({})
 local lsp_installer = require "nvim-lsp-installer"
-
 -- map buffer local keybindings when the language server attaches
 local servers = {
-	'bashls',
-	'clangd',
-	'golangci_lint_ls',
-	'gopls',
-	'jdtls',
-	'jsonls',
-	'sumneko_lua',
-	'texlab',
+	'html',				-- html
+	'bashls',			-- bash
+	'clangd',			-- c/c++
+	'cmake',			-- cmake
+	'golangci_lint_ls', -- golanglint
+	'gopls',			-- golang
+	'jsonls',			-- json
+	'sumneko_lua',		-- lua
+	-- 'jdtls',
+	-- 'texlab',
 }
 
 
 for _, lsp in ipairs(servers) do
 	local server_is_found, server = lsp_installer.get_server(lsp)
 	if server_is_found and not server:is_installed() then
-		print("Installing " .. lsp)
+		print("LSP Installing " .. lsp)
 		server:install()
 	end
 
@@ -42,6 +42,9 @@ for _, lsp in ipairs(servers) do
 		settings = settings,
 	}
 end
+
+-- lsp signature
+require "lsp_signature".setup()
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
