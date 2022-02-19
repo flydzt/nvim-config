@@ -1,3 +1,7 @@
+local nvim_lsp = require('lspconfig')
+require "lsp_signature".setup({})
+local lsp_installer = require "nvim-lsp-installer"
+
 -- map buffer local keybindings when the language server attaches
 local servers = {
 	'bashls',
@@ -10,24 +14,13 @@ local servers = {
 	'texlab',
 }
 
-local nvim_lsp = require('lspconfig')
-
-local cfg = {}
-require "lsp_signature".setup(cfg)
-
 
 for _, lsp in ipairs(servers) do
-	-- local server_available, requested_server = lsp_installer_servers.get_server(lsp)
-	-- if server_available then
-	-- 	requested_server:on_ready(function ()
-	-- 		local opts = {}
-	-- 		requested_server:setup(opts)
-	-- 	end)
-	-- 	if not requested_server:is_installed() then
-	-- 		-- Queue the server to be installed
-	-- 		requested_server:install()
-	-- 	end
-	-- end
+	local server_is_found, server = lsp_installer.get_server(lsp)
+	if server_is_found and not server:is_installed() then
+		print("Installing " .. lsp)
+		server:install()
+	end
 
 
 	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
