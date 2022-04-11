@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 map('n', '<leader><leader><leader>', ':NvimTreeToggle<CR>', opt)
 
 -- terminal
-map('n', '<leader><leader>t', ':FloatermToggle<CR>', opt)
+map('n', '<leader><leader>t', ':w<CR>:FloatermToggle<CR>', opt)
 
 -- jump
 map('n', '<leader><leader>l', ':HopLine<CR>', opt)
@@ -25,10 +25,11 @@ map('n', '<leader>fg', ':Telescope live_grep<CR>', opt)
 -- map('n', '<leader>fg', ':Rg<CR>', opt)
 
 -- lsp
-map('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-map('n', 'gd', ':Trouble lsp_definitions<CR>', opt)
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+map('n', 'gD', ':Trouble lsp_definitions<CR>', opt)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+map('n', 'gi', ':Trouble lsp_implementations<CR>', opt)
+map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
 map('n', 'gy', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
 map('n', 'gR', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
 map('n', 'gr', ':Trouble lsp_references<CR>', opt)
@@ -50,7 +51,8 @@ map('n', '<leader>ea', ':TroubleToggle workspace_diagnostics<CR>', opt)
 
 -- refactor
 map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
-map('n', '<leader>rg', ':!goimports -w -local code,git %<CR>', opt)
+-- map('n', '<leader>rg', ':w<CR>:!goimports -w -local code,git %<CR>', opt)
+map('n', '<leader>rg', ':w<CR>:!~/goimports_help.sh %<CR>', opt)
 
 -- buffer
 map('n', '<leader>bd', ':bd<CR>', opt)
