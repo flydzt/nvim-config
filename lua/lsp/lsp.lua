@@ -14,6 +14,7 @@ local servers = {
 	'sqls',				-- sql
 	'sumneko_lua',		-- lua
 	'yamlls',			-- yaml
+	'zk',				--markdown
 	-- 'jdtls',
 	-- 'texlab',
 }
@@ -47,6 +48,7 @@ for _, lsp_name in ipairs(servers) do
 		}
 	end
 	lspconfig[lsp_name].setup {
+		on_attach = on_attach,
 		capabilities = capabilities,
 		flags = {
 			debounce_text_changes = 150,
