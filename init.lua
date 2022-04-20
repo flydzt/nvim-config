@@ -21,5 +21,6 @@ require('plugs-config/gitsigns')
 require('plugs-config/indent')
 require('plugs-config/trouble')
 require('plugs-config/whichkey')
+require('plugs-config/xall')
 require('lsp/lsp')
 
