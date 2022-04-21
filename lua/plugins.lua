@@ -39,6 +39,8 @@ return require('packer').startup(function()
 	-- preview
 	-- use 'iamcco/markdown-preview.nvim'
 	-- use 'xuhdev/vim-latex-live-preview'
+	-- test
+	use 'buoto/gotests-vim'
 
 	-- better default
 	use {
