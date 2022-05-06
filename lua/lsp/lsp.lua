@@ -14,8 +14,8 @@ local servers = {
 	'sqls',				-- sql
 	'sumneko_lua',		-- lua
 	'yamlls',			-- yaml
-	'zk',				--markdown
-	-- 'jdtls',
+	'zk',				-- markdown
+	'jdtls',			-- java
 	-- 'texlab',
 }
 

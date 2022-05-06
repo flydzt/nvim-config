@@ -36,6 +36,7 @@ return require('packer').startup(function()
 	-- git
 	use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, }
 	use 'tpope/vim-fugitive'
+	use 'kdheepak/lazygit.nvim'
 	-- preview
 	-- use 'iamcco/markdown-preview.nvim'
 	-- use 'xuhdev/vim-latex-live-preview'
@@ -43,6 +44,9 @@ return require('packer').startup(function()
 	use 'buoto/gotests-vim'
 
 	-- better default
+	use 'rcarriga/nvim-notify'
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use 'dstein64/nvim-scrollview'
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }

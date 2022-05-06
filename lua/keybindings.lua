@@ -53,6 +53,7 @@ map('n', '<leader>ea', ':TroubleToggle workspace_diagnostics<CR>', opt)
 map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
 -- map('n', '<leader>rg', ':w<CR>:!goimports -w -local code,git %<CR>', opt)
 map('n', '<leader>rg', ':w<CR>:!~/goimports_help.sh %<CR>', opt)
+map('n', '<leader>rt', ':w<CR>:!gomodifytags -file % -struct <cword> -add-tags json -add-options json=omitempty --skip-unexported --quiet -w<CR>', opt)
 
 -- buffer
 map('n', '<leader>bd', ':bd<CR>', opt)
@@ -65,6 +66,7 @@ map('n', '<leader>t', ':TranslateW<CR>', opt)
 map('v', '<leader>t', ':TranslateW<CR>', opt)
 
 -- git
+map('n', '<leader>gg', ':LazyGit<CR>', opt)
 map('n', '<leader>gs', ':Git status<CR>', opt)
 map('n', '<leader>ga', ':Git add .<CR>', opt)
 map('n', '<leader>gc', ':Git commit -a<CR>', opt)
