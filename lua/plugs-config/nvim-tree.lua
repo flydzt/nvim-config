@@ -27,7 +27,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 		side = "left",
 		preserve_window_proportions = false,
 		number = false,
-		relativenumber = false,
+		relativenumber = true,
 		signcolumn = "yes",
 		mappings = {
 			custom_only = false,
@@ -54,7 +54,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 		auto_open = true,
 	},
 	update_focused_file = {
-		enable = false,
+		enable = true,
 		update_cwd = false,
 		ignore_list = {},
 	},
@@ -64,8 +64,8 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
 		args = {},
 	},
 	diagnostics = {
-		enable = false,
-		show_on_dirs = false,
+		enable = true,
+		show_on_dirs = true,
 		icons = {
 			hint = "",
 			info = "",
