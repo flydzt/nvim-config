@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- file manager
-map('n', '<leader><leader><leader>', ':NvimTreeToggle<CR>', opt)
+map('n', '<leader><leader><leader>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', opt)
 
 -- terminal
 map('n', '<leader><leader>t', ':w<CR>:FloatermToggle<CR>', opt)

@@ -46,7 +46,6 @@ return require('packer').startup(function()
 	-- better default
 	use 'rcarriga/nvim-notify'
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-	use 'dstein64/nvim-scrollview'
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
