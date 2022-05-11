@@ -13,6 +13,7 @@ local servers = {
 	'rust_analyzer',	-- rust
 	'sqls',				-- sql
 	'sumneko_lua',		-- lua
+	'tsserver',			-- typescript
 	'yamlls',			-- yaml
 	'zk',				-- markdown
 	'jdtls',			-- java
