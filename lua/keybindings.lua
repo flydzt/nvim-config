@@ -26,8 +26,8 @@ map('n', '<leader>fg', ':Telescope live_grep<CR>', opt)
 -- map('n', '<leader>fg', ':Rg<CR>', opt)
 
 -- lsp
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-map('n', 'gD', ':Trouble lsp_definitions<CR>', opt)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+map('n', 'gd', ':Trouble lsp_definitions<CR>', opt)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
 map('n', 'gi', ':Trouble lsp_implementations<CR>', opt)
 map('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
