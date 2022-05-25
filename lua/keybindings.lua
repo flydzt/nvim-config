@@ -52,9 +52,6 @@ map('n', '<leader>ea', ':TroubleToggle workspace_diagnostics<CR>', opt)
 
 -- refactor
 map('n', '<leader>rf', ':w<CR><cmd>lua vim.lsp.buf.formatting()<CR>', opt)
--- map('n', '<leader>rg', ':w<CR>:!goimports -w -local code,git %<CR>', opt)
-map('n', '<leader>rg', ':w<CR>:!~/goimports_help.sh %<CR>', opt)
-map('n', '<leader>rt', ':w<CR>:!gomodifytags -file % -struct <cword> -add-tags json -add-options json=omitempty --skip-unexported --quiet -w<CR>', opt)
 
 -- buffer
 map('n', '<leader>bd', ':bd<CR>', opt)

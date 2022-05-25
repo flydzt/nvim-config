@@ -96,6 +96,7 @@ return require('packer').startup(function()
 	use 'rakr/vim-one'
 	-- use 'morhetz/gruvbox'
 	use 'ellisonleao/gruvbox.nvim'
+    use 'lifepillar/vim-gruvbox8'
 	use 'NLKNguyen/papercolor-theme'
 	-- auto sync
 	if PACKER_BOOTSTRAP then

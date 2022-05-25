@@ -1,80 +1,70 @@
--- utf8
-vim.g.encoding = "UTF-8"
-vim.o.fileencoding = 'utf-8'
--- jk移动时光标下上方保留8行
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
--- 使用相对行号
-vim.wo.number = true
-vim.wo.relativenumber = true
--- 高亮所在行
-vim.wo.cursorline = false
-vim.wo.cursorcolumn = false
--- 显示左侧图标指示列
-vim.wo.signcolumn = "yes"
--- 右侧参考线，超过表示代码太长了，考虑换行
-vim.wo.colorcolumn = "78"
--- 缩进2个空格等于一个Tab
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftround = true
--- >> << 时移动长度
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
--- 新行对齐当前行，空格替代tab
-vim.o.expandtab = false
-vim.bo.expandtab = false
-vim.o.smartindent = true
--- 搜索大小写不敏感，除非包含大写
-vim.o.ignorecase = true
-vim.o.smartcase = true
--- 搜索不要高亮
-vim.o.hlsearch = false
--- 边输入边搜索
-vim.o.incsearch = true
--- 使用增强状态栏后不再需要 vim 的模式提示
-vim.o.showmode = false
--- 命令行高为2，提供足够的显示空间
-vim.o.cmdheight = 2
--- 当文件被外部程序修改时，自动加载
-vim.o.autoread = true
-vim.bo.autoread = true
--- 禁止折行
-vim.o.wrap = false
-vim.wo.wrap = false
--- 行结尾可以跳到下一行
-vim.o.whichwrap = 'b,s,<,>,[,],h,l'
--- 允许隐藏被修改过的buffer
-vim.o.hidden = true
--- 鼠标支持
-vim.o.mouse = "a"
--- 禁止创建备份文件
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.swapfile = false
--- smaller updatetime
-vim.o.updatetime = 300
--- 设置 timeoutlen 为等待键盘快捷键连击时间300毫秒，可根据需要设置
--- vim.o.timeoutlen = 300
--- split window 从下边和右边出现
-vim.o.splitbelow = true
-vim.o.splitright = true
--- 自动补全不自动选中
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
--- 样式
-vim.o.termguicolors = true
-vim.opt.termguicolors = true
--- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.list = true
---vim.o.listchars = "space:·"
--- 补全增强
-vim.o.wildmenu = true
--- Dont' pass messages to |ins-completin menu|
-vim.o.shortmess = vim.o.shortmess .. 'c'
-vim.o.pumheight = 10
--- always show tabline
-vim.o.showtabline = 2
+-- global options
+vim.opt.autoread = true
+vim.opt.autowrite = false
+vim.opt.backup = false
+vim.opt.clipboard = "unnamed,unnamedplus"
+vim.opt.completeopt = "menu,menuone,noinsert"
+vim.opt.diffopt = "internal,filler,vertical"
+vim.opt.display = "lastline,msgsep"
+vim.opt.equalalways = true
+vim.opt.fillchars = vim.opt.fillchars + 'diff:╱' + 'fold: '
+vim.opt.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
+vim.opt.hidden = true
+vim.opt.history = 100
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.inccommand = 'nosplit'
+vim.opt.incsearch = true
+vim.opt.joinspaces = false
+vim.opt.joinspaces = false
+vim.opt.laststatus = 3
+vim.opt.lazyredraw = true
+vim.opt.modelines = 0
+vim.opt.mouse = "a"
+vim.opt.path = vim.opt.path + "**/*"
+vim.opt.pumblend = 10
+vim.opt.pumheight = 10
+vim.opt.scrolloff = 8
+vim.opt.shortmess = "filnxtToOFc"
+vim.opt.showcmd = false
+vim.opt.showmode = false
+vim.opt.sidescrolloff = 8
+vim.opt.smartcase = true
+vim.opt.smarttab = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.title = true
+vim.opt.updatetime = 1000
+vim.opt.visualbell = false
+vim.opt.wildmode = "full"
+vim.opt.writebackup = false
 
-vim.g.livepreview_engine='xelatex'
-vim.g.livepreview_previewer='zathura'
+-- window local
+vim.opt.colorcolumn = "+1"
+vim.opt.cursorline = true
+vim.opt.foldcolumn = 'auto:3'
+vim.opt.foldmarker = "{{{,}}}"
+vim.opt.foldmethod = "marker" -- {{{ }}}
+vim.opt.number = true
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+
+-- spellings
+vim.opt.spelllang = 'en_us'
+vim.opt.spellsuggest = 'best'
+
+-- buffer local
+vim.opt.autoindent = true
+vim.opt.expandtab = true
+vim.opt.fixendofline = false
+vim.opt.formatoptions = "cqnjlr"
+vim.opt.matchpairs = "(:),{:},[:],<:>"
+vim.opt.modelines = 5
+vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
+vim.opt.softtabstop = 4
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.textwidth = 79
+vim.opt.undofile = true
+
