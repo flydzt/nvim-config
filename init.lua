@@ -22,6 +22,6 @@ require('plugs-config/lualine')
 require('plugs-config/indent')
 require('plugs-config/trouble')
 require('plugs-config/whichkey')
-require('plugs-config/xall')
+require('plugs-config/all-in-one')
 require('lsp/lsp')
 

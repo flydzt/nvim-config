@@ -37,27 +37,12 @@ end
 
 -- lspconfig
 for _, lsp_name in ipairs(servers) do
-	local settings = {}
-	local cmd
 	local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-	if lsp_name == "clangd" then
-		cmd = {
-			"clangd",
-			"--background-index",
-			"--suggest-missing-includes",
-			"--clang-tidy",
-			"--completion-style=bundled",
-			"--header-insertion=iwyu"
-		}
-	end
 	lspconfig[lsp_name].setup {
-		on_attach = on_attach,
 		capabilities = capabilities,
 		flags = {
 			debounce_text_changes = 150,
 		},
-		settings = settings,
-		cmd = cmd;
 	}
 end
 
