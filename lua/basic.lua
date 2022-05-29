@@ -2,7 +2,7 @@
 vim.opt.autoread = true
 vim.opt.autowrite = false
 vim.opt.backup = false
-vim.opt.clipboard = "unnamed,unnamedplus"
+-- vim.opt.clipboard = "unnamed,unnamedplus"
 vim.opt.completeopt = "menu,menuone,noinsert"
 vim.opt.diffopt = "internal,filler,vertical"
 vim.opt.display = "lastline,msgsep"
