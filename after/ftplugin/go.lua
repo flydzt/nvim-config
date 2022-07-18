@@ -1,3 +1,4 @@
+vim.opt.expandtab = false
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true }
 -- map('n', '<leader>rg', ':w<CR>:!goimports -w -local code,git %<CR>', opt)
